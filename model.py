@@ -1,5 +1,6 @@
 import tensorflow as tf
 import tensorlayer as tl
+import numpy as np
 from tensorlayer.layers import *
 from dataset import Train_dataset
 import math
@@ -8,10 +9,11 @@ from scipy.ndimage.filters import gaussian_filter
 from utils import smooth_gan_labels, aggregate, subPixelConv3d
 import nibabel as nib
 import os
-from skimage.measure import compare_ssim as ssim
-from skimage.measure import compare_psnr as psnr
+from skimage.metrics import structural_similarity as ssim
+from skimage.metrics import peak_signal_noise_ratio as psnr
 from keras.layers.convolutional import UpSampling3D
 import argparse
+
 
 
 def lrelu1(x):

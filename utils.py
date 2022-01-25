@@ -1,7 +1,7 @@
 import keras as K
 from keras.utils import conv_utils
 from keras.layers.convolutional import UpSampling3D
-from keras.engine import InputSpec
+from keras.layers import InputSpec
 from tensorlayer.layers import *
 
 
